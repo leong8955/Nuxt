@@ -1,0 +1,24 @@
+Step 1: Install Yarn
+npm install --global yarn
+
+Step 2: Create New Nuxt 2 Project
+yarn create nuxt-app <your-project-name>
+
+Step 3: Choose Your Configuration
+During the setup process, you’ll be prompted to choose various options for your Nuxt application, such as:
+
+Package manager: Choose Yarn.
+UI framework: Select any UI framework you prefer (like Vuetify, Tailwind CSS, etc.).
+Server framework: Choose between options like Express, Fastify, etc.
+Linting tools: Pick your preferred linting options.
+Testing framework: Select if you want to include testing tools.
+
+Step 4: Install Dependencies
+yarn install
+
+Step 5: Run Application
+yarn dev
+
+Step 6: Build and Start Production
+yarn build
+yarn start

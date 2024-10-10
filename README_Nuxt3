@@ -1,0 +1,21 @@
+Step 1: Install Yarn
+npm install --global yarn
+
+Step 2: Create New Nuxt 3 Project with npx
+npx nuxi@latest init <your-project-name>
+
+Step 3: Install Dependencies
+yarn install
+
+Step 4: Install Pinia
+npx nuxi@latest module add pinia
+
+Step 5: Install I18n translations
+npx nuxi@latest module add i18n
+
+Step 6: Run Application
+yarn dev
+
+Step 7: Build and Start Production
+yarn build
+yarn start

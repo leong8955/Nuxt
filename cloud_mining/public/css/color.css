@@ -22,3 +22,25 @@
   background-color: #121421;
   background-image: url(../images/color1-5/bg-mobile.jpg);
 }
+
+@media (min-width: 1200px) {
+  .color1-1 .content-wrapper {
+      background-image: url(../images/color1-1/bg.jpg);
+  }
+
+  .color1-2 .content-wrapper {
+    background-image: url(../images/color1-2/bg.jpg);
+  }
+
+  .color1-3 .content-wrapper {
+    background-image: url(../images/color1-3/bg.jpg);
+  }
+
+  .color1-4 .content-wrapper {
+    background-image: url(../images/color1-4/bg.jpg);
+  }
+
+  .color1-5 .content-wrapper {
+    background-image: url(../images/color1-5/bg.jpg);
+  }
+}

@@ -1,6 +1,6 @@
 <script setup>
 import { mapState } from "pinia";
-// import { useLayoutStore } from "~/stores/layout";
+import { useLayoutStore } from "~/stores/layout";
 </script>
 
 <template lang="pug">
@@ -12,18 +12,18 @@ import { mapState } from "pinia";
       span.caption {{ $t("loading") }}
       span.host {{ host().value }}
       span.dots
-    // .p-0.m-0(v-if="site.theme_code")
-    //   span.title {{ site.theme_code }}
-    //   span.title {{ site.theme_color }}
-    // .p-0.m-0(v-if="message")
-    //   span.title {{ message }}
+    .p-0.m-0(v-if="site.theme_code")
+      span.title {{ site.theme_code }}
+      span.title {{ site.theme_color }}
+    .p-0.m-0(v-if="message")
+      span.title {{ message }}
 
 </template>
 
 <script>
 export default {
   computed: {
-    // ...mapState(useLayoutStore, ["message", "site"]),
+    ...mapState(useLayoutStore, ["message", "site"]),
   },
   data() {
     return {};
@@ -34,5 +34,5 @@ export default {
 </script>
 
 <style scoped>
-@import url("/assets/css/loader.css"); 
+@import url("/public/css/loader.css"); 
 </style>

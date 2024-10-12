@@ -30,17 +30,15 @@ export default {
   padding: 0;
   border: 0;
   color: #a2a5b3;
-  background: url('~/assets/images/color1-1/bg.jpg') no-repeat center center;
   background-size: cover;
   align-content: center;
   width: 100svw;
-  height: calc(100svh - 100px);
+  height: 100svh;
 }
 
 /* Tablet width : 768 px */
 @media (max-width: 768px) {
   .card-border-animation-container {
-    background: url('~/assets/images/color1-1/bg-mobile.jpg') no-repeat center center;
     background-size: cover;
   }
 }

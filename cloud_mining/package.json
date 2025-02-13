@@ -7,16 +7,25 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "iisnode": "yarn install --frozen-lockfile && nuxt build --preset=iis_node"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "^8.5.5",
-    "@pinia/nuxt": "^0.5.5",
+    "@unlazy/nuxt": "^0.11.3",
+    "dayjs": "^1.11.13",
+    "highcharts": "^11.4.8",
+    "highcharts-stock": "^0.1.7",
+    "marquee": "^0.2.1",
     "nuxt": "^3.13.0",
     "pug": "^3.0.3",
-    "pug-plain-loader": "^1.1.0",
-    "vue": "latest",
-    "vue-router": "latest"
+    "vue": "^3.5.10"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "devDependencies": {
+    "@nuxtjs/i18n": "^8.5.5",
+    "@pinia/nuxt": "^0.5.5",
+    "@vee-validate/nuxt": "4.14.7",
+    "nuxt-marquee": "^1.0.4",
+    "nuxt-swiper": "^1.2.2"
+  }
 }

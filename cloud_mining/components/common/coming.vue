@@ -4,7 +4,7 @@ import { useLayoutStore } from "~/stores/layout";
 </script>
 
 <template lang="pug">
-.card-border-animation-container
+.card-border-animation-container(:style="{ width: cardWidth }")
   .card.card-border-animation
     h1.text-uppercase {{ $t("comingsoon") }}
     .card
@@ -14,7 +14,20 @@ import { useLayoutStore } from "~/stores/layout";
 <script>
 export default {
   computed: {
-    ...mapState(useLayoutStore, ["theme"]),
+    // ...mapState(useLayoutStore, ["theme"]),
+    cardWidth() {
+    //   const layout = useLayoutStore();
+    //   if(layout.template === preference.template["casino2"] ||
+    //      layout.template === preference.template["slot2"] ||
+    //      layout.template === preference.template["slot4"] ||
+    //      layout.template === preference.template["slot5"] ||
+    //      layout.template === preference.template["sportsbook1"]
+    //   ){
+    //     return 'auto';
+    //   } else {
+        return '100svw';
+    //   }
+    },
   },
   data() {
     return {};
@@ -30,19 +43,10 @@ export default {
   padding: 0;
   border: 0;
   color: #a2a5b3;
-  background-size: cover;
   align-content: center;
   width: 100svw;
-  height: 100svh;
+  height: calc(100svh - 100px);
 }
-
-/* Tablet width : 768 px */
-@media (max-width: 768px) {
-  .card-border-animation-container {
-    background-size: cover;
-  }
-}
-
 .card-border-animation h1 {
   color: #ff009588;
 }

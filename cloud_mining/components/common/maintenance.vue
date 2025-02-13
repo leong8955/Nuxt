@@ -1,25 +1,56 @@
 <script setup>
 import { mapState } from "pinia";
 import { useLayoutStore } from "~/stores/layout";
+
 </script>
 
 <template lang="pug">
-.card-border-animation-container
+.card-border-animation-container(v-if="is_client")
   .card.card-border-animation
     h1.text-uppercase {{ $t("maintenance") }}
     .card
-      p {{ $t("msg.maintenance") }}
+      p {{ maintenanceMessage }}
 </template>
 
 <script>
 export default {
   computed: {
-    ...mapState(useLayoutStore, ["theme"]),
+    ...mapState(useLayoutStore, ["maintenance"]),
+
+    formattedStartTime() {
+      const start = this.maintenance.start_date;
+      return start ? new Date(start).toLocaleString() : new Date();
+    },
+    
+    formattedEndTime() {
+      const end = this.maintenance.end_date;
+      return end ? new Date(end).toLocaleString() : new Date();
+    },
+
+    maintenanceMessage() {
+      let { start_date, end_date } = this.maintenance;
+      start_date = new Date().toLocaleString();
+      end_date = new Date().toLocaleString();
+      
+      if (!start_date || !end_date) {
+        return this.$t("msg.maintenance");
+      }
+
+      return this.$t("msg.maintenance_period", {
+        startTime: this.formattedStartTime,
+        endTime: this.formattedEndTime
+      });
+    },
   },
   data() {
-    return {};
+    const is_client = false;
+    return {
+      is_client,
+    };
   },
-  mounted() {},
+  mounted() {
+    this.is_client = true;
+  },
   methods: {},
 };
 </script>
@@ -29,22 +60,11 @@ export default {
   margin: 0;
   padding: 0;
   border: 0;
-  color: #a2a5b3;
-  background: url('~/assets/images/color1-1/bg.jpg') no-repeat center center;
-  background-size: cover;
+  color: #343438;
   align-content: center;
   width: 100dvw;
   height: 100dvh;
 }
-
-/* Tablet width : 768 px */
-@media (max-width: 768px) {
-  .card-border-animation-container {
-    background: url('~/assets/images/color1-1/bg-mobile.jpg') no-repeat center center;
-    background-size: cover;
-  }
-}
-
 .card-border-animation h1 {
   color: #ff009588;
 }
@@ -69,6 +89,7 @@ export default {
   initial-value: 0deg;
   inherits: false;
 }
+
 .card-border-animation::after,
 .card-border-animation::before {
   content: "";

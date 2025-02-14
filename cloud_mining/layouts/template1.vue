@@ -87,7 +87,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+@import url("/assets/css/t1.css");
+
 .pages { 
   display: flex;
   flex-direction: column;

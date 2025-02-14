@@ -12,7 +12,7 @@ Swiper(
     SwiperSlide(v-for="(slide, index) in slides" :key="index")
         //- img(:src="slide.image" :alt="slide.alt").w-100
         NuxtLink(:to="slide.url ? slide.url : '#'")
-            CommonUiTemplateImage(:item="slide.image" :sharedOrCustomTemplate="true" type="banner").w-100
+            CommonUiTemplateImage(:item="slide.image" :sharedOrCustomTemplate="true" type="banner" imgClass="banner-img").w-100
 
     .swiper-pagination-outer
         .swiper-pagination-inner

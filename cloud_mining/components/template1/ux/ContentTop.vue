@@ -11,6 +11,8 @@ import { inject } from 'vue';
 const goToPrev = inject('goToPrev');
 const is_client = ref(false);
 
+const route = useRoute();
+
 onMounted(() => {
   is_client.value = true;
 });
@@ -18,8 +20,11 @@ onMounted(() => {
 
 <template lang="pug">
 .header-row(v-if="is_client")
-  a.back-button(@click='goToPrev')
-    i.fas.fa-arrow-left
+  template(v-if="route.path === '/'") 
+
+  template(v-else)
+    a.back-button(@click='goToPrev')
+      i.fas.fa-arrow-left
   h1.title {{ $t(`title.${title}`) }}
   Template1UxLanguageBar
 </template>

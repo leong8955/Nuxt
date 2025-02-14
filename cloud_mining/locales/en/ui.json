@@ -1,5 +1,33 @@
 {
   "loading":"Loading",
   "comingsoon":"Coming Soon",
-  "":""
+  "maintenance": "Maintenance",
+  "about": "About",
+  "title":{
+    "home":"Home",
+    "about":"About",
+    "contact":"Contact",
+    "faq":"FAQ",
+    "terms":"Terms",
+    "privacy":"Privacy",
+    "login":"Login",
+    "register":"Register",
+    "logout":"Logout",
+    "profile":"Profile",
+    "dashboard":"Dashboard",
+    "wallet":"Wallet",
+    "transactions":"Transactions",
+    "settings":"Settings",
+    "notifications":"Notifications",
+    "help":"Help"
+  },
+  "menu": {
+    "home": "Home",
+    "login": "Login",
+    "account": "Account",
+    "about": "About"
+  },
+
+
+  "" : ""
 }
